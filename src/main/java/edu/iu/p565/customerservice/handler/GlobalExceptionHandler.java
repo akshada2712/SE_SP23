@@ -20,6 +20,6 @@ public class GlobalExceptionHandler {
         String errorMessages = exception.getBindingResult().getFieldErrors().stream()
                 .map(error -> error.getDefaultMessage())
                 .collect(Collectors.joining(","));
-        return ResponseEntity.badRequest().body(exception.getMessage());
+        return ResponseEntity.badRequest().body(errorMessages);
     }
 }
